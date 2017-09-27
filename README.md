@@ -17,6 +17,6 @@ It uses native Amazon SDK CloudWatch client to call API over HTTP/HTTPS.
 3. Modify "deploy\CounterPublisher\bin\CounterPublisher.dll.config" with your own settings.
 4. Restart Photon Server.
 
-![PhotonCountersOnCloudWatch](https://github.com/PhotonEngine/photon.counterpublisher.cloudwatch/PhotonCountersOnCloudWatch.png)
+![PhotonCountersOnCloudWatch](https://raw.githubusercontent.com/PhotonEngine/photon.counterpublisher.cloudwatch/master/PhotonCountersOnCloudWatch.PNG)
 
 Read more about "[Publishing to Amazon AWS CloudWatch](https://doc.photonengine.com/en-us/onpremise/current/performance/photon-counters#_usage_cloudwatch)".
