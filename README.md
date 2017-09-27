@@ -14,7 +14,7 @@ It uses native Amazon SDK CloudWatch client to call API over HTTP/HTTPS.
 
 1. Copy content of this repository to the root directory of your Photon Server SDK. Current tested version is v4-0-29-11263.
 2. Using Visual Studio, open "src-server\CounterPublisher.AWS.CloudWatch\CounterPublisher.AWS.CloudWatch.sln" solution and build project.
-3. Modify "deploy\CounterPublisher\bin\CounterPublisher.dll.config" with your own settings.
+3. Modify "deploy\CounterPublisher\bin\CounterPublisher.dll.config" with your own settings. An example can be found in this repository.
 4. Restart Photon Server.
 
 ![PhotonCountersOnCloudWatch](https://raw.githubusercontent.com/PhotonEngine/photon.counterpublisher.cloudwatch/master/PhotonCountersOnCloudWatch.PNG)
