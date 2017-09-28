@@ -218,11 +218,14 @@ namespace ExitGames.Diagnostics.Monitoring.Protocol.AWS.CloudWatch
                     Log.WarnFormat("Metric is too long (max 255): {0}, {1}", d.MetricName, GetMetricDatumToString(d));
                     continue;
                 }
-
                 data.Add(d);
+                if (data.Count == 20)
+                {
+                    PublishMetricData(data);
+                    data.Clear();
+                }
             }
 
-            PublishMetricData(data);
         }
 
         private void PublishMetricData(List<MetricDatum> data)
