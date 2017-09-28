@@ -67,6 +67,17 @@
 xcopy /Y /Q "$(TargetDir)$(TargetName).pdb" "$(ProjectDir)..\..\deploy\CounterPublisher\bin\"
 xcopy /Y /Q "$(TargetDir)AWSSDK.dll" "$(ProjectDir)..\..\deploy\CounterPublisher\bin\"
 xcopy /Y /Q "$(TargetDir)AWSSDK.xml" "$(ProjectDir)..\..\deploy\CounterPublisher\bin\"
+
+xcopy /Y /Q "$(TargetDir)$(TargetName).dll" "$(ProjectDir)..\..\deploy\Loadbalancing\Master\bin\"
+xcopy /Y /Q "$(TargetDir)$(TargetName).pdb" "$(ProjectDir)..\..\deploy\Loadbalancing\Master\bin\"
+xcopy /Y /Q "$(TargetDir)AWSSDK.dll" "$(ProjectDir)..\..\deploy\Loadbalancing\Master\bin\"
+xcopy /Y /Q "$(TargetDir)AWSSDK.xml" "$(ProjectDir)..\..\deploy\Loadbalancing\Master\bin\"
+
+xcopy /Y /Q "$(TargetDir)$(TargetName).dll" "$(ProjectDir)..\..\deploy\Loadbalancing\GameServer\bin\"
+xcopy /Y /Q "$(TargetDir)$(TargetName).pdb" "$(ProjectDir)..\..\deploy\Loadbalancing\GameServer\bin\"
+xcopy /Y /Q "$(TargetDir)AWSSDK.dll" "$(ProjectDir)..\..\deploy\Loadbalancing\GameServer\bin\"
+xcopy /Y /Q "$(TargetDir)AWSSDK.xml" "$(ProjectDir)..\..\deploy\Loadbalancing\GameServer\bin\"
+
 </PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
