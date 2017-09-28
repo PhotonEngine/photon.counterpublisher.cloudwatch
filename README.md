@@ -14,8 +14,24 @@ It uses native Amazon SDK CloudWatch client to call API over HTTP/HTTPS.
 
 1. Copy content of this repository to the root directory of your Photon Server SDK. Current tested version is v4-0-29-11263.
 2. Using Visual Studio, open "src-server\CounterPublisher.AWS.CloudWatch\CounterPublisher.AWS.CloudWatch.sln" solution and build project.
-3. Modify "deploy\CounterPublisher\bin\CounterPublisher.dll.config" with your own settings. An example can be found in this repository.
+3. Modify CounterPublisher section with your own settings inside the following files:
+- "deploy\CounterPublisher\bin\CounterPublisher.dll.config" 
+- "deploy\LoadBalancing\Master\bin\Photon.LoadBalancing.dll.config"
+- "deploy\LoadBalancing\GameServer\bin\Photon.LoadBalancing.dll.config"
+An example can be found in this repository [here](https://github.com/PhotonEngine/photon.counterpublisher.cloudwatch/blob/master/deploy/CounterPublisher/bin/CounterPublisher.dll.config).
 4. Restart Photon Server.
+
+## Enable Debugging
+
+To enable debugging of Photon Counters add the following to a "log4net.config" file to one of the server applications ("CounterPublisher", "MasterServer" or "GameServer"):
+
+```
+<logger name="ExitGames.Diagnostics">
+  <level value="DEBUG" />    
+</logger>
+```
+
+Log entries will start to show for the respective application.
 
 ![PhotonCountersOnCloudWatch](https://raw.githubusercontent.com/PhotonEngine/photon.counterpublisher.cloudwatch/master/PhotonCountersOnCloudWatch.PNG)
 
