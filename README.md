@@ -9,6 +9,7 @@ You can use these insights to react and keep your application running smoothly.
 To publish metrics to Amazon CloudWatch with "CounterPublisher" you need to use the plugin from this repository.
 It uses native Amazon SDK CloudWatch client to call API over HTTP/HTTPS.
 
+[Read more details here](https://doc.photonengine.com/en-us/server/current/performance/photon-counters#_usage_cloudwatch).
 
 ## How To Use
 
