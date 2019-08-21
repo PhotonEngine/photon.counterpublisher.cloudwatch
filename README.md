@@ -37,4 +37,4 @@ Log entries will start to show for the respective application.
 
 ![PhotonCountersOnCloudWatch](https://raw.githubusercontent.com/PhotonEngine/photon.counterpublisher.cloudwatch/master/PhotonCountersOnCloudWatch.PNG)
 
-Read more about "[Publishing to Amazon AWS CloudWatch](https://doc.photonengine.com/en-us/server/v4/performance/photon-counters#_usage_cloudwatch)".
+Read more about "[Publishing to Amazon AWS CloudWatch](https://doc.photonengine.com/en-us/server/v4/performance/photon-counters#publishing_to_amazon_aws_cloudwatch)".
