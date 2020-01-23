@@ -53,6 +53,10 @@ namespace ExitGames.Diagnostics.Monitoring.Protocol.AWS.CloudWatch
 
         public const int MaxPayloadSize = 40*1024;
 
+        // cloud-watch only lets us send maximum of 20 pieces of metric data per request,
+        // so split in to groups of 20
+        public const int MetricsMaxBatchSize = 20;
+
         private static readonly DateTime Epoch = new DateTime(1970, 1, 1);
 
         private static readonly Regex SpecialCharPattern = new Regex("[^a-zA-Z0-9]", RegexOptions.Compiled | RegexOptions.CultureInvariant);
@@ -207,8 +211,6 @@ namespace ExitGames.Diagnostics.Monitoring.Protocol.AWS.CloudWatch
                 return;
             }
 
-            // cloud-watch only lets us send maximum of 20 pieces of metric data per request,
-            // so split in to groups of 20
             var data = new List<MetricDatum>(packages.Length);
             foreach (var package in packages)
             {
@@ -219,13 +221,14 @@ namespace ExitGames.Diagnostics.Monitoring.Protocol.AWS.CloudWatch
                     continue;
                 }
                 data.Add(d);
-                if (data.Count == 20)
+                if (data.Count == MetricsMaxBatchSize)
                 {
                     PublishMetricData(data);
                     data.Clear();
                 }
             }
-
+            // publish remaining (% MetricsMaxBatchSize) if any
+            PublishMetricData(data);
         }
 
         private void PublishMetricData(List<MetricDatum> data)
